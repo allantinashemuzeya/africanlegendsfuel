@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::controller(PageController::class)->group(function () {
+    Route::get('/', 'home')->name('home');
+    Route::get('/about-us', 'about')->name('about');
+    Route::get('/services', 'services')->name('services');
+    Route::get('/responsibility', 'responsibility')->name('responsibility');
+    Route::get('/our-sales-terms', 'salesTerms')->name('sales-terms');
+    Route::get('/contact-us', 'contact')->name('contact');
 });
