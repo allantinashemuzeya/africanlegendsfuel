@@ -10,7 +10,7 @@
 	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{{$title}}</title>
+	<title>{{$data['title']}}</title>
 	<meta name='robots' content='max-image-preview:large' />
 	<link rel='dns-prefetch' href='http://s.w.org/' />
 	<link rel="alternate" type="application/rss+xml" title="Tectxon Demo3 &raquo; Feed" href="feed/index.html" />
@@ -4900,6 +4900,17 @@
 	<style>
 		/** Mega Menu CSS: fs **/
 	</style>
+
+    <style>
+        #site-header > div > div.tm-header-top-wrapper.container.tm-container-for-header.tm-textcolor-white.tm-header-widget-text-white > div > div.col-xs-12.col-sm-4.col-md-6 > div > div > div > h1 > a > span > img{
+            width: 100%;
+            transform: scale(2.5);
+        }
+
+        .headerlogo img {
+            max-height: 172px;
+        }
+    </style>
 </head>
 
 <body
@@ -4911,7 +4922,7 @@
 
 		<div id="page" class="hfeed site">
 
-			<x-header :current="$current"/>
+			<x-header :data="$data"/>
 			<div id="content-wrapper" class="site-content-wrapper">
 				<div id="content" class="site-content ">
 					<div id="content-inner" class="site-content-inner ">
@@ -4956,7 +4967,8 @@
 					urlFields[j].addEventListener('blur', maybePrefixUrlField);
 				}
 			}
-		})();</script>
+		})();
+    </script>
 	<script type="text/html" id="wpb-modifications"></script>
 	<link href="https://fonts.googleapis.com/css?family=Oswald:700%2C600%2C400%7CRoboto:400" rel="stylesheet"
 		property="stylesheet" media="all">

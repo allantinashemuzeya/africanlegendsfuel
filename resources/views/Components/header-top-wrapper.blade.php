@@ -1,4 +1,4 @@
-    
+
                             <div
                             class="tm-header-top-wrapper container tm-container-for-header tm-textcolor-white tm-header-widget-text-white">
                             <div>
@@ -11,7 +11,7 @@
                                                 </div>
                                                 <div class="header-content">
                                                     <p>Call Us On:</p>
-                                                    <h4>+0 123 456 7890</h4>
+                                                    <h4>{{$data['contact_number']}}</h4>
                                                 </div>
                                             </div>
                                         </div>

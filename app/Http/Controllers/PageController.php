@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\PagesDiscovery\Discover;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -13,7 +14,12 @@ class PageController extends Controller
 
     public function home(): Factory|View|Application
     {
-        return view('Pages/Home', ['current' => 'Home', 'title' => 'Home']);
+        $data = (new Discover())->homepage();
+
+        $data['current'] = 'Home';
+
+//        dd($data);
+        return view('Pages/Home', ['data' => $data]);
     }
 
     public function about(): Factory|View|Application
